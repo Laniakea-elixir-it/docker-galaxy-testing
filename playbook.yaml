@@ -4,3 +4,4 @@
   roles:
     - role: indigo-dc.galaxycloud-tools
       galaxy_flavor: 'galaxy-TESTING'
+      galaxy_admin_api_key: 'GALAXY_ADMIN_API_KEY'
