@@ -3,7 +3,7 @@
   connection: local
   roles:
     - role: indigo-dc.galaxycloud-tools
-      galaxy_flavor: 'galaxy-TESTING'
+      galaxy_flavor: 'galaxy-testing'
       move_datasets: false
       Galaxy_flavor_recipe_branch: 'devel'
       create_bootstrap_user: true
