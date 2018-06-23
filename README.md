@@ -1,2 +1,2 @@
-# docker-galaxycloud-testing
-docker-galaxycloud - galaxy-TESTING flavor
+# docker-galaxy-testing
+docker for  galaxy-testing flavor
