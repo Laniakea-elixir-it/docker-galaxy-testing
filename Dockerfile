@@ -1,4 +1,4 @@
-FROM laniakeacloud/galaxy-full
+FROM laniakeacloud/galaxy-full:devel
 
 MAINTAINER ma.tangaro@ibiom.cnr.it
 
@@ -6,7 +6,7 @@ ENV container docker
 
 COPY ["playbook.yaml","/"]
 
-RUN ansible-galaxy install indigo-dc.galaxycloud-tools
+RUN ansible-galaxy install indigo-dc.galaxycloud-tools,devel
 
 RUN echo "localhost" > /etc/ansible/hosts
 
