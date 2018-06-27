@@ -1,4 +1,4 @@
-FROM laniakeacloud/galaxy-full:devel
+FROM laniakeacloud/galaxy:devel
 
 MAINTAINER ma.tangaro@ibiom.cnr.it
 
