@@ -6,5 +6,5 @@
       GALAXY_VERSION: 'release_17.05'
       galaxy_flavor: 'galaxy-testing'
       move_datasets: false
-      Galaxy_flavor_recipe_branch: 'devel'
+      Galaxy_flavor_recipe_branch: 'master'
       #create_bootstrap_user: true
