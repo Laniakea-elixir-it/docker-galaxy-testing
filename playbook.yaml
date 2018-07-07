@@ -8,3 +8,5 @@
       move_datasets: false
       Galaxy_flavor_recipe_branch: 'master'
       #create_bootstrap_user: true
+
+    - role: indigo-dc.galaxycloud-tooldeps
