@@ -10,3 +10,4 @@
       #create_bootstrap_user: true
 
     - role: indigo-dc.galaxycloud-tooldeps
+      GALAXY_VERSION: 'release_17.05'
