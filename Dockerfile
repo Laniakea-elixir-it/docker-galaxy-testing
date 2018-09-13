@@ -1,4 +1,4 @@
-FROM laniakeacloud/galaxy:17.05
+FROM laniakeacloud/galaxy:18.05
 
 MAINTAINER ma.tangaro@ibiom.cnr.it
 
