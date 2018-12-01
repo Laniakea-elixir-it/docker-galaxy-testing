@@ -6,7 +6,7 @@
       GALAXY_VERSION: 'release_18.05'
       galaxy_flavor: 'galaxy-testing'
       move_datasets: false
-      Galaxy_flavor_recipe_branch: 'master'
+      Galaxy_flavor_recipe_branch: 'rc3'
       #create_bootstrap_user: true
 
     - role: indigo-dc.galaxycloud-tooldeps
