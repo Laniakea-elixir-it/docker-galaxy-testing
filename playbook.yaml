@@ -1,12 +1,21 @@
 ---
 - hosts: localhost
   connection: local
+  pre_tasks:
+    - command: '/home/galaxy/galaxy/.venv/bin/python
+            /usr/local/bin/parse_galaxy_yaml.py
+            -c "/home/galaxy/galaxy/config/galaxy.yml"
+            -s "galaxy"
+            -o "brand"
+            -v "Epigen"'
+      become_user: galaxy
+      become: true
   roles:
     - role: indigo-dc.galaxycloud-tools
       GALAXY_VERSION: 'release_18.05'
       galaxy_flavor: 'galaxy-testing'
       move_datasets: false
-      Galaxy_flavor_recipe_branch: 'rc3'
+      Galaxy_flavor_recipe_branch: 'rc2'
       #create_bootstrap_user: true
 
     #- role: indigo-dc.galaxycloud-tooldeps
