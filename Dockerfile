@@ -12,17 +12,14 @@ RUN ansible-galaxy install indigo-dc.cvmfs-client
 RUN ansible-galaxy install indigo-dc.galaxycloud-refdata
 
 # Download refdata configuration file
-ENV REFDATA_CVMFS_REPOSITORY_NAME=elixir-italy.galaxy.refdata
-ADD https://raw.githubusercontent.com/indigo-dc/Reference-data-galaxycloud-repository/master/cvmfs_server_keys/$REFDATA_CVMFS_REPOSITORY_NAME.pub /tmp/$REFDATA_CVMFS_REPOSITORY_NAME.pub
-ADD https://raw.githubusercontent.com/indigo-dc/Reference-data-galaxycloud-repository/master/cvmfs_server_config_files/$REFDATA_CVMFS_REPOSITORY_NAME.conf /tmp/$REFDATA_CVMFS_REPOSITORY_NAME.conf
+ADD https://raw.githubusercontent.com/indigo-dc/Reference-data-galaxycloud-repository/master/cvmfs_server_keys/elixir-italy.galaxy.refdata.pub /tmp/elixir-italy.galaxy.refdata.pub
+ADD https://raw.githubusercontent.com/indigo-dc/Reference-data-galaxycloud-repository/master/cvmfs_server_config_files/elixir-italy.galaxy.refdata.conf /tmp/elixir-italy.galaxy.refdata.conf
 
 RUN echo "localhost" > /etc/ansible/hosts
 
-# Install tools and configure cvmfs
-RUN ansible-playbook /playbook.yaml -e 'GALAXY_VERSION=release_17.05
-    refdata_provider_type=cvmfs_preconfigured
-    refdata_repository_name=elixir-italy.galaxy.refdata
-    refdata_cvmfs_repository_name=elixir-italy.galaxy.refdata'
+# Install tools and configure cvmfs reference data
+RUN ansible-playbook /playbook.yaml
 
 # This overwrite docker-galaxy CMD line
-CMD /bin/mount -t cvmfs ${REFDATA_CVMFS_REPOSITORY_NAME} /cvmfs/${REFDATA_CVMFS_REPOSITORY_NAME}; /usr/local/bin/galaxy-startup; /usr/bin/sleep infinity
+# Mount cvmfs and start galaxy
+CMD /bin/mount -t cvmfs elixir-italy.galaxy.refdata /cvmfs/elixir-italy.galaxy.refdata; /usr/local/bin/galaxy-startup; /usr/bin/sleep infinity

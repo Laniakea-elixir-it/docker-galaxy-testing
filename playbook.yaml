@@ -9,16 +9,13 @@
       Galaxy_flavor_recipe_branch: 'rc3'
       #create_bootstrap_user: true
 
-    - role: indigo-dc.galaxycloud-tooldeps
-      GALAXY_VERSION: 'release_18.05'
-      when: GALAXY_VERSION == 'release_17.05'
+    #- role: indigo-dc.galaxycloud-tooldeps
+    #  GALAXY_VERSION: 'release_18.05'
 
     - role: indigo-dc.galaxycloud-refdata
       get_refdata: 'true'
       refdata_dir: '/cvmfs'
       refdata_repository_name: 'elixir-italy.galaxy.refdata'
-      refdata_provider_type: 'cvmfs'
-      refdata_cvmfs_server_url: '90.147.102.186'
+      refdata_provider_type: 'cvmfs_preconfigured'
       refdata_cvmfs_repository_name: 'elixir-italy.galaxy.refdata'
       refdata_cvmfs_key_file: 'elixir-italy.galaxy.refdata.pub'
-      refdata_cvmfs_proxy_url: 'DIRECT'
